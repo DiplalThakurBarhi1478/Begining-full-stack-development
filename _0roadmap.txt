@@ -1,0 +1,13 @@
+Frontend Development
+HTML >> CSS >> JAVASCRIPT >> TypeScript >> React The Library >> Next.js the framework 
+
+Backend Development
+Node.js >> Express.js >> REST API >> Authentication >> JWT/Session 
+
+Database 
+SQL >> MySQL >> Database Design >> Advanced SQL >> PostgreSQL >> NoSQL >> Database Internals.
+
+DevOps and Infrastructure
+linux >> Networking >> Docker & Kubernetes the container >> AWS OR Azure the hosting platform >> Github Actions
+
+
