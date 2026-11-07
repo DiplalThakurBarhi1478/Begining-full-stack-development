@@ -1,0 +1,96 @@
+Basic Idea is the javascript 
+
+access the id >> set what you want on it
+
+Window 
+    --> it is a global boject 
+    --> it is created by browser not by javascript
+    --> it has lots of properties and method
+
+Document
+    --> it is a object created inside the window object
+    --> HTML pages is created inside the document object
+
+
+DOM 
+    --> When a web page is loaded, the browser creates a Document Object Model (DOM) of the page.
+
+DOM Manipulation
+ 1. selecting with id 
+    document.getElementById("myId")
+
+ 2. selecting with class
+    document.getElementsByClassName("myClass")
+
+ 3. selecting with tag
+    document.getElementsByTagName("p")
+
+Best
+ 4. Query Selector
+    document.querySelector("#myId/ .myClass/ tag")
+    // returns first element 
+
+    document.querySelectorAll("#myId/ .myClass/ tag")
+    // return a NodeList
+
+
+properties
+    tagName 
+    innerText
+    innerHTML
+    textContent
+
+-------------------------------------------------------------------
+. body
+HTMLCollection
+A collection containing the body element.
+
+
+B. body[0]
+Element / Node
+The actual body element.
+
+
+C. body[0].children
+HTMLCollection
+A collection of five direct child elements.
+
+
+D. body[0].firstChild
+Node
+The first child node, which is whitespace in your HTML.
+
+
+E. body[0].firstElementChild
+Element / Node
+The first actual HTML element: div#myId.
+
+---------------------------------------------------------------
+
+DOM Manipulation
+
+Attributes
+    getAttribute(attr) // to get the attribute value
+    setAttribute(attr, value) // to set the attribute value
+
+Style
+    node.Style
+
+-----------------------------------------------------------------
+
+DOM Manipulation
+
+Insert Element
+    let el = document.createElement("div")
+
+    node.append(el) // inside
+    node.prepend(el)
+
+    node.before(el) // outside
+    node.after(el)
+
+Delete Element
+    node.remove()
+    
+    
+

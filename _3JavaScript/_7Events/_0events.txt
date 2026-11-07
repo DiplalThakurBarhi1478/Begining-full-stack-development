@@ -1,0 +1,32 @@
+Events in Js
+    mouse Events
+    keyboard Events
+    form Events
+    print Events
+
+
+--------------------------------------------------------------------------------
+Event Handling in Js
+    
+    node.event = () => {
+        console.log("btn was clicked");
+    }
+
+
+-------------------------------------------------------------------------------
+Event Object
+    all event handlers have access to the event object properties and methods
+
+    node.event = (e) => {
+        // handle here
+    }
+
+
+---------------------------------------------------------------------------
+Event Listeners (better)
+    node.addEventListener(event, callback)
+
+    node.removeEventListener(event, callback)
+
+
+--------------------------------------------------------------------------
