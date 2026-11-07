@@ -1,0 +1,48 @@
+Prototypes in JS (Every object has prototype, an object)
+---------------------------------------------
+    A javascript object is an entity having state and behavior (properties and method)
+
+    JS objects have a special property called Prototypes
+    
+    We can set prototype using __proto__
+
+    Note: if object and prototype have same method then object's method will be used.
+
+    Note: array is an object and it contains prototype.
+
+
+
+Classes in JS
+-------------
+    It is a program code template for creating objects
+    
+    Those objects will have some state (variables) & some behaviour (functions) inside it.
+
+    class myClass {
+        constructor(){
+        }
+
+        myMethod(){
+        }
+    }
+
+
+
+
+Classes in JS (Constructor Method)
+    -> constructor method is automatically invoked by new 
+    -> initializes object
+
+
+
+
+Inheritance in JS 
+
+
+
+Super Keyword
+
+
+
+
+Error Handling
