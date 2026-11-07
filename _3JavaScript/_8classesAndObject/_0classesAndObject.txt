@@ -12,6 +12,8 @@ Prototypes in JS (Every object has prototype, an object)
 
 
 
+
+
 Classes in JS
 -------------
     It is a program code template for creating objects
@@ -29,20 +31,49 @@ Classes in JS
 
 
 
+
+
 Classes in JS (Constructor Method)
+----------------------------------
     -> constructor method is automatically invoked by new 
     -> initializes object
+
+Note we can initialized any variable at the time of creating constructor
+    
+    class myClass{
+        constructor(brand, mileage){
+            console.log("I am a constructor and I can initialize any variable");
+            this.brand = brand;
+            this.mileage = mileage;
+        }
+    }
+
+    let obj = new myClass("toyota", 10);
+
 
 
 
 
 Inheritance in JS 
+------------------
+    we inherit all properties from the parent class in teh child class
+
+    we create object to print the parent through child.
+
+
+
 
 
 
 Super Keyword
+--------------
+    we inherit all properties and methods
+
+    if we have initialized variable already in the parent class then we use "super() inside child constructor" keyword to pass the value and store in that 
+
 
 
 
 
 Error Handling
+---------------
