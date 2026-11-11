@@ -1,0 +1,9 @@
+Async-Await
+
+    Async function:
+    -> return promises
+
+    Await
+    -> it makes the surrounding function wait until the promise is settled.
+
+    
