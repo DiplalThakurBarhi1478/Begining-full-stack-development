@@ -4,8 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stone, Paper & Scissors</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <h1>Stone, Paper And Scissors</h1>
     
+    <div class="choices">
+        <div class="choice" id="stone">
+            <img src="images/rock.png" alt="image of rock">
+        </div>
+        <div class="choice" id="paper">
+            <img src="images/paper.png" alt="image of paper">
+        </div>
+        <div class="choice" id="scissors">
+            <img src="images/scissors.png" alt="image of scissors">
+        </div>
+    </div>
+
+    <div class="score-board">
+        <div class="score">
+            <p id="user-score">0</p>
+            <p>You</p>
+        </div>
+        <div class="score">
+            <p id="comp-score">0</p>
+            <p>Computer</p>
+        </div>
+    </div>
+
+    <div class="msg-container">
+        <p id="msg">Play Your Move</p>
+        <button class="msg" id="reset">Reset</button>
+    </div>
+   <script src="script.js"></script>
 </body>
 </html>
