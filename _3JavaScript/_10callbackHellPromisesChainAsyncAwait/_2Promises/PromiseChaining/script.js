@@ -16,27 +16,25 @@ let promise = new Promise((resolve, reject) => {
 // Basically this is done by other person
 //***************************************************************
 
-/* 
 
-function getData(a, getNextData){
+
+function getData(a){
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            
-            //console.log("data", a);
-            //resolve("success");
-
-            // failure reject("failure");
-
-            if(getNextData){
-                getNextData();
-            }
-        }, 6000);
-    })
+            console.log("Data ", a);
+            resolve("Success");
+        }, 3000);
+    });
 }
 
-*/
+// Promise Chaining
 
-// **************************************************************
-// after getting promise how do we use it
+getData(1).then((res) =>{
+    return getData(2);
+}).then((res) => {
+    return getData(3);
+}).then((res) => {
+    console.log(res);
+});
 
 
