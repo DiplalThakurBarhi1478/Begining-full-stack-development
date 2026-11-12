@@ -1,0 +1,127 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body{
+    background-color: brown;
+    color: white;
+}
+
+header nav{
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    z-index: 1;
+}
+
+header nav h1{
+    font-size:26px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+header nav form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form input[type="text"]{
+    flex-grow : 1;
+    margin-right: 10px;
+}
+
+form input[type="text"], button[type="submit"]{
+    padding: 1rem;
+    border-radius: 0.5rem;
+    font-size: 18px;
+    border: none;
+}
+
+form button[type="submit"]{
+    background-color: brown;
+    color: white;
+    cursor: pointer;
+/* 
+    using transition to smooth to change
+*/ 
+    transition: background-color 0.2s ease-in-out;
+}
+
+/* 
+using hover to change when cursor moved over 
+*/
+
+form button[type="submit"]:hover{
+    opacity: 0.8;
+}
+
+.recipe-container{
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+    width: 80%;
+    margin:  10px auto;
+    padding: 20px;
+    place-items: center;
+}
+
+.recipe{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    color: black;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px lightgray;
+    max-width: 350px;
+    gap: 4px;
+    padding-bottom: 5px;
+}
+
+.recipe img{
+    height: 300px;
+    border-radius: 5px;
+}
+
+.recipe h3{
+    font-size: 24px;
+}
+
+.recipe p{
+    font-size: 18px;
+    color: blue;
+}
+
+.recipe button{
+    background-color: rgb(214, 48, 2);
+    height: 2.5rem;
+    color: white;
+    border-radius: 0.5rem;
+    border: none;
+    margin: 18px auto;
+    padding: 10px;
+}
+
+/* 
+media query using for screen size change
+*/
+
+@media screen and (max-width: 600px){
+    header nav{
+        flex-direction: column;
+    }
+
+    header nav form{
+        width: 80%;
+        margin-top: 1rem;
+    }
+}
+
