@@ -58,16 +58,17 @@ form button[type="submit"]{
 using hover to change when cursor moved over 
 */
 
-form button[type="submit"]:hover{
+form button[type="submit"]:hover, recipe-close-btn:hover, .recipe button:hover{
     opacity: 0.8;
+    cursor: pointer;
 }
 
 .recipe-container{
     text-align: center;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-gap: 20px;
-    width: 80%;
+    grid-gap: 40px;
+    width: 90%;
     margin:  10px auto;
     padding: 20px;
     place-items: center;
@@ -84,6 +85,11 @@ form button[type="submit"]:hover{
     max-width: 350px;
     gap: 4px;
     padding-bottom: 5px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.recipe:hover{
+    transform: scale(1.02);
 }
 
 .recipe img{
@@ -108,11 +114,92 @@ form button[type="submit"]:hover{
     border: none;
     margin: 18px auto;
     padding: 10px;
+    font-weight: bold;
+    font-size: 18px;
 }
+
+
+.recipe-details{
+    display: none;
+    position:  fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    background-color:rgb(214, 48, 2);
+    border-radius: 10px;
+    height: 60%;
+    width: 30%;
+    padding: 1rem;
+    transition: all 0.5s ease-in-out;
+
+    /* add scroll bar */
+    overflow-y: scroll;
+}
+
+
+/* add scroll bar and track with css desgin */
+
+.recipe-details::-webkit-scrollbar{
+    width: 10px;
+}
+
+.recipe-details::-webkit-scrollbar-thumb{
+    background: white;
+    border-radius: 16px;
+    --webkit-border-radius: 16px;
+}
+
+body::-webkit-scrollbar{
+    width: 10px;
+}
+
+body::-webkit-scrollbar-track{
+    background: lightgray;
+}
+
+body::-webkit-scrollbar-thumb{
+    background: rgb(239, 68, 68);
+    border-radius: 16px;
+    --webkit-border-radius: 16px;
+}
+
+.recipeName{
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+
+.recipeIngredients{
+    padding-left: 2rem;
+}
+
+.recipeInstructions{
+    padding-left: 1rem;
+    text-align: justify;
+    margin-top: 1rem;
+}
+
+.recipe-close-btn{
+    border-radius: 50%;
+    top: 10px;
+    right: 10px;
+    
+    /* to change as per the container */
+
+    position: absolute;
+}
+
+
 
 /* 
 media query using for screen size change
 */
+
+/* Responsive Code */
 
 @media screen and (max-width: 600px){
     header nav{
