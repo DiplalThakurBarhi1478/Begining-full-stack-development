@@ -5,9 +5,10 @@ const recipeDetails = document.querySelector(".recipe-details");
 const recipeCloseBtn = document.querySelector(".recipe-close-btn");
 const recipeDetailsContent = document.querySelector(".recipe-details-content");
 
+// fetching data from the API
+
 const fetchRecipe = async (searchVal) => {
-    
-    recipeContainer.innerHTML = `<h2>Fetching your recipes..........</h2>`;
+    recipeContainer.innerHTML = `<h2>Fetching your recipes...</h2>`;
 
     let response = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchVal}`);
     let data = await response.json();
@@ -15,10 +16,11 @@ const fetchRecipe = async (searchVal) => {
     recipeContainer.innerHTML = "";
     //console.log(data);
 
+
+    // for every meal we have to create a div
     data.meals.forEach(meal => {
         
         //console.log(meal);
-
         let recipeDiv = document.createElement("div");
         recipeDiv.classList.add('recipe');
         recipeDiv.innerHTML = `
@@ -29,13 +31,13 @@ const fetchRecipe = async (searchVal) => {
         
         `;
 
+        // creating a button to view informatoin inside the same div
         const button = document.createElement("button");
         button.textContent = "View Recipe";
         recipeDiv.appendChild(button);
         recipeContainer.appendChild(recipeDiv);
         
         // adding event listener in the btn
-
         button.addEventListener("click", () => {
             openRecipePopup(meal);
         })
@@ -43,10 +45,11 @@ const fetchRecipe = async (searchVal) => {
     })
 }
 
+
+// after clicking and rendering the format we have to fetch ingredient data so here i have called hte function
 const fetchIngredients = (meal) => {
     //console.log(meal);
     
-
     let ingredientsList = "";
 
     for(let i = 1; i <= 20; i++){
@@ -58,11 +61,11 @@ const fetchIngredients = (meal) => {
             break;
         }
     }
-
     return ingredientsList;
 }
 
 
+// when the popup bnt is clicked it shoudl view information of the particular foods.
 const openRecipePopup = (meal) => {
     recipeDetailsContent.innerHTML = `
         <h2 class="recipeName">${meal.strMeal}</h2>
@@ -74,11 +77,11 @@ const openRecipePopup = (meal) => {
         </div>
     `;
 
-
     recipeDetailsContent.parentElement.style.display = "block";
 }
 
 
+// this is the search button linked to the input form
 searchBtn.addEventListener("click", (event) => {
     event.preventDefault();
     
@@ -89,6 +92,7 @@ searchBtn.addEventListener("click", (event) => {
 })
 
 
+// thisis the button used to close the recipe detail pop up onced clicked ot the cross.
 recipeCloseBtn.addEventListener("click", () => {
     recipeDetailsContent.parentElement.style.display = "none";
 })
