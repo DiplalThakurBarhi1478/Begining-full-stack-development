@@ -9,6 +9,18 @@
 <body>
     <h1>Score <span id="score">0</span></h1>
     <canvas id="board" height="400" width="400"></canvas>
+    <div id="gameOverModal" class="modal hidden">
+        <div class="modal-content">
+            <h2>Game Over!</h2>
+            <p id="finalScoreText">Final Score: 0</p>
+            <p id="foodEatenText">Food Eaten: 0</p>
+            <div class="modal-buttons">
+                <button id="playAgainBtn">Play Again</button>
+                <button id="cancelBtn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
