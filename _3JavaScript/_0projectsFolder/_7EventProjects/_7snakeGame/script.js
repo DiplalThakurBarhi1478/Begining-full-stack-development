@@ -53,7 +53,9 @@ function update(){
         showGameOverPopup();
         return;
     }
+   
     snake.unshift(head); // Add new head
+
 
 // checking if snake eats food
     if(head.x === food.x && head.y === food.y){
@@ -73,24 +75,6 @@ function showGameOverPopup() {
     modal.classList.remove("hidden");
 }
 
-function resetGame() {
-    snake = [{x: 10, y: 10}];
-    dx = 1;
-    dy = 0;
-    score = 0;
-    scoreDisplay.textContent = score;
-    food = spawnFood();
-    modal.classList.add("hidden");
-    gameLoop = setInterval(update, 300);
-}
-
-// Button listeners
-playAgainBtn.addEventListener("click", resetGame);
-
-cancelBtn.addEventListener("click", () => {
-    modal.classList.add("hidden");
-});
-
 
 function draw(){
     // clear board
@@ -99,7 +83,7 @@ function draw(){
 
     //draw food
     ctx.fillStyle = 'red';
-    ctx.fillRect(food.x * box, food.y * box, box -2, box -2);
+    ctx.fillRect(food.x * box, food.y * box, box - 2, box - 2);
 
     //draw snake
     snake.forEach((segment, index) =>{
@@ -116,7 +100,15 @@ function spawnFood(){
             x: Math.floor(Math.random() * gridSize),
             y: Math.floor(Math.random() * gridSize)
         };
-        const onSnake = snake.some(seg => seg.x === newFood.x && seg.y === newFood.y);
+        
+        let onSnake = false;
+
+        snake.forEach(seg => {
+            if(seg.x === newFood.x && seg.y === newFood.y){
+                onSnake = true;
+            }
+        });
+
         if(!onSnake) break;
     }
 return newFood;
@@ -139,5 +131,24 @@ function changingDirection(event){
     if(key === "ArrowRight" && !goingLeft){ dx = 1; dy = 0; changeDirection = true;};
 
 }
+
+
+function resetGame() {
+    snake = [{x: 10, y: 10}];
+    dx = 1;
+    dy = 0;
+    score = 0;
+    scoreDisplay.textContent = score;
+    food = spawnFood();
+    modal.classList.add("hidden");
+    gameLoop = setInterval(update, 500);
+}
+
+// Button listeners
+playAgainBtn.addEventListener("click", resetGame);
+
+cancelBtn.addEventListener("click", () => {
+    modal.classList.add("hidden");
+});
 
 
